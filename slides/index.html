@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>NoSql (Not Only Sql Databases)</h1>
+        <p>Надеюсь, пицца уже приехала.</p>
+    </header>
+
+    <section class="slide">
+        <h2>План доклада</h2>
+        <ul>
+            <li>Введение</li>
+            <li>Виды</li>
+            <li>Принцип работы</li>
+            <li>Отличия от реляционных субд</li>
+            <li>Сфера и практика применения</li>
+            <li>Разбор конкретных субд с примерами</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Введение</h2>
+        <p>NoSql - пример подхода к решению задачи масштабируемости, гибкости модели данных и минимальных временных задержек на обработку данных.</p>
+        <p>Первые применили - Google.</p>
+        <p>Развили и явили народу - Facebook, IBM, Apache.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Виды</h2>
+        <ul>
+            <li>Колоночные (Column family) - разреженные матрицы в памяти, commit log  на диске. (Hadoop, Cassandra, Big Table)</li>
+            <li>Ключ-значение (Key-value) - большая хеш-таблица. (Redis, DynamoDB)</li>
+            <li>Документно-ориентированное хранилище - структурированный документ json-подобный. (MongoDB)</li>
+            <li>Графовое хранилище - сеть из узлов и рёбер с индексами. (Amazon Neptune)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Виды. Иллюстрация</h2>
+        <img src="pictures/нскл_2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Принцип работы. Общая информация.</h2>
+        <ul>
+            <li>Данные хранятся почти всегда в памяти.</li>
+            <li>ACID vs BASE. Безопасность - на поруки разработчиков.</li>
+            <li>Sharding. Self-contained объекты vs JOIN.</li>
+            <li>Новая СУБД - новый язык.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Отличия от реляционных субд. Колоночные СУБД.</h2>
+        <p>Одна огромная таблица с данными.</p>
+        <p>Внешние ключи, колоночные семейства, колонки.</p>
+        <p>Информация в виде непрерывной записи.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Реляционная БД - View. Колоночные СУБД.</h2>
+        <img src="pictures/table2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Google Big Table - View. Колоночные СУБД.</h2>
+        <img src="pictures/googlebigtable.png">
+    </section>
+
+    <section class="slide">
+        <h2>Отличия от реляционных субд. Ключ-значение.</h2>
+        <p>Отсутствие схемы данных - вместо неё - хеш-таблица.</p>
+        <p>Уникальный ключ + хранимый объект.</p>
+        <p>Забота об уникальности. Отсутствие транзакций из коробки.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Отличия от реляционных субд. MongoDB.</h2>
+        <p>Полуструктуринованный документ, похожий на JSON/XML.</p>
+        <p>То же самое, что и ключ-значение, однако, с поиском и мета-информацией.</p>
+        <p>То же самое, что и sql, однако, с отсутствием схемы и возможностью разрежения.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Отличия от реляционных субд. Графовое хранилище.</h2>
+        <p>Деревья данных. Система хранения вида "родитель - дети".</p>
+        <p>Каждая единица данных может быть чьим-то отпрыском (но только кого-то одного) и иметь сколько-то собственных отпрысков.</p>
+    </section>
+    <section class="slide">
+        <h2>Отличия от реляционных субд. Графовое хранилище. Иллюстрация.</h2>
+            <img src="pictures/qwe.png">
+    </section>
+
+    <section class="slide">
+        <h2>Сфера и практика примерения.</h2>
+        <p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Redis. Установка. Режимы.</h2>
+        <p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Redis. Синтаксис.</h2>
+        <p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Redis. Отказоустойчивость.</h2>
+        <p></p>
+    </section>
+
+
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+    <!-- Copyright © 2020 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
