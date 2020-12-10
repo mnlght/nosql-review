@@ -22,6 +22,8 @@
         <h2>План доклада</h2>
         <ul>
             <li>Введение</li>
+            <li>Какие проблемы есть у реляционных БД?</li>
+            <li>Как NoSql порешал эти проблемы?</li>
             <li>Виды</li>
             <li>Принцип работы</li>
             <li>Отличия от реляционных субд</li>
@@ -37,6 +39,24 @@
     </section>
 
     <section class="slide">
+        <h2>Какие проблемы есть у реляционных БД?</h2>
+        <p>Привязанность к схеме данных.</p>
+        <p>Большая временная задержка (low-latency), которая не позволяет обрабатывать большой объем данных с разной структурой.</p>
+        <p>Существуют принципиальные (реляционные) проблемы при горизонтальном масштабировании кластера.</p>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/ozisuwybs1e51.jpg" class="cover">
+    </section>
+
+    <section class="slide">
+        <h2>Как NoSql порешал эти проблемы?</h2>
+        <p>Схемы данных нет вообще.</p>
+        <p>Данные почти всегда хранятся в оперативной памяти.</p>
+        <p>Self-contained объекты > Реляционная алгебра.</p>
+    </section>
+
+    <section class="slide">
         <h2>Виды</h2>
         <ul>
             <li>Колоночные (Column family) - разреженные матрицы в памяти, commit log  на диске. (Hadoop, Cassandra, Big Table)</li>
@@ -48,7 +68,7 @@
 
     <section class="slide">
         <h2>Виды. Иллюстрация</h2>
-        <img src="pictures/нскл_2.png">
+        <img src="pictures/нскл_2.png" class="cover">
     </section>
 
     <section class="slide">
@@ -70,12 +90,11 @@
 
     <section class="slide">
         <h2>Реляционная БД - View. Колоночные СУБД.</h2>
-        <img src="pictures/table2.png">
+        <img src="pictures/table2.png" class="cover">
     </section>
 
     <section class="slide">
-        <h2>Google Big Table - View. Колоночные СУБД.</h2>
-        <img src="pictures/googlebigtable.png">
+        <img src="pictures/googlebigtable.png" class="cover">
     </section>
 
     <section class="slide">
@@ -98,13 +117,42 @@
         <p>Каждая единица данных может быть чьим-то отпрыском (но только кого-то одного) и иметь сколько-то собственных отпрысков.</p>
     </section>
     <section class="slide">
-        <h2>Отличия от реляционных субд. Графовое хранилище. Иллюстрация.</h2>
-            <img src="pictures/qwe.png">
+            <img src="pictures/qwe.png" class="cover">
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Сфера и практика примерения.</h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/1537785588113346811.jpg" class="cover">
     </section>
 
     <section class="slide">
         <h2>Сфера и практика примерения.</h2>
-        <p></p>
+        <li>Кеширование</li>
+        <li>Q&A данные</li>
+        <li>Хранение документов</li>
+        <li>Быстрый доступ к большим наборам данных</li>
+    </section>
+
+    <section class="slide">
+        <h2>Громкие имена.</h2>
+        <li>Spotify - рекомендации (Apache Cassandra)</li>
+        <li>Twitter - real-time сообщения (Redis)</li>
+        <li>Uber - уведомления (MongoDB)</li>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Можно ли прокачать реляционные БД?</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Нет</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Описание конкретных СУБД.</h2>
     </section>
 
     <section class="slide">
