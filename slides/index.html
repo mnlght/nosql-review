@@ -15,7 +15,6 @@
 
     <header class="caption">
         <h1>NoSql (Not Only Sql Databases)</h1>
-        <p>Надеюсь, пицца уже приехала.</p>
     </header>
 
     <section class="slide">
@@ -40,9 +39,11 @@
 
     <section class="slide">
         <h2>Какие проблемы есть у реляционных БД?</h2>
-        <p>Привязанность к схеме данных.</p>
-        <p>Большая временная задержка (low-latency), которая не позволяет обрабатывать большой объем данных с разной структурой.</p>
-        <p>Существуют принципиальные (реляционные) проблемы при горизонтальном масштабировании кластера.</p>
+        <ul>
+            <li class="next">Привязанность к схеме данных.</li>
+            <li class="next">Большая временная задержка (low-latency), которая не позволяет обрабатывать большой объем данных с разной структурой.</li>
+            <li class="next">Существуют принципиальные (реляционные) проблемы при горизонтальном масштабировании кластера.</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -51,9 +52,11 @@
 
     <section class="slide">
         <h2>Как NoSql порешал эти проблемы?</h2>
-        <p>Схемы данных нет вообще.</p>
-        <p>Данные почти всегда хранятся в оперативной памяти.</p>
-        <p>Self-contained объекты > Реляционная алгебра.</p>
+        <ul>
+            <li>Схемы данных нет вообще.</li>
+            <li class="next">Данные почти всегда хранятся в оперативной памяти.</li>
+            <li class="next">Self-contained объекты > Реляционная алгебра.</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -75,17 +78,19 @@
         <h2>Принцип работы. Общая информация.</h2>
         <ul>
             <li>Данные хранятся почти всегда в памяти.</li>
-            <li>ACID vs BASE. Безопасность - на поруки разработчиков.</li>
-            <li>Sharding. Self-contained объекты vs JOIN.</li>
-            <li>Новая СУБД - новый язык.</li>
+            <li class="next">ACID vs BASE. Безопасность - на поруки разработчиков.</li>
+            <li class="next">Sharding. Self-contained объекты vs JOIN.</li>
+            <li class="next">Новая СУБД - новый язык.</li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>Отличия от реляционных субд. Колоночные СУБД.</h2>
-        <p>Одна огромная таблица с данными.</p>
-        <p>Внешние ключи, колоночные семейства, колонки.</p>
-        <p>Информация в виде непрерывной записи.</p>
+        <ul>
+            <li>Одна огромная таблица с данными.</li>
+            <li class="next">Внешние ключи, колоночные семейства, колонки.</li>
+            <li class="next">Информация в виде непрерывной записи.</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -99,22 +104,28 @@
 
     <section class="slide">
         <h2>Отличия от реляционных субд. Ключ-значение.</h2>
-        <p>Отсутствие схемы данных - вместо неё - хеш-таблица.</p>
-        <p>Уникальный ключ + хранимый объект.</p>
-        <p>Забота об уникальности. Отсутствие транзакций из коробки.</p>
+        <ul>
+            <li>Отсутствие схемы данных - вместо неё - хеш-таблица.</li>
+            <li class="next">Уникальный ключ + хранимый объект.</li>
+            <li class="next">Забота об уникальности. Отсутствие транзакций из коробки.</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Отличия от реляционных субд. MongoDB.</h2>
-        <p>Полуструктуринованный документ, похожий на JSON/XML.</p>
-        <p>То же самое, что и ключ-значение, однако, с поиском и мета-информацией.</p>
-        <p>То же самое, что и sql, однако, с отсутствием схемы и возможностью разрежения.</p>
+        <ul>
+            <li>Полуструктуринованный документ, похожий на JSON/XML.</li>
+            <li class="next">То же самое, что и ключ-значение, однако, с поиском и мета-информацией.</li>
+            <li class="next">То же самое, что и sql, однако, с отсутствием схемы и возможностью разрежения.</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Отличия от реляционных субд. Графовое хранилище.</h2>
-        <p>Деревья данных. Система хранения вида "родитель - дети".</p>
-        <p>Каждая единица данных может быть чьим-то отпрыском (но только кого-то одного) и иметь сколько-то собственных отпрысков.</p>
+        <ul>
+            <li>Деревья данных. Система хранения вида "родитель - дети".</li>
+            <li class="next">Каждая единица данных может быть чьим-то отпрыском (но только кого-то одного) и иметь сколько-то собственных отпрысков.</li>
+        </ul>
     </section>
     <section class="slide">
             <img src="pictures/qwe.png" class="cover">
@@ -152,25 +163,97 @@
     </section>
 
     <section class="slide">
+        <h2>Ответ реляционных бд.</h2>
+        <ul>
+            <li>Введение типов полей JSON.</li>
+            <li>Введение шардинга. Интересен - горизонтальный шардинг.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
         <h2 class="shout">Описание конкретных СУБД.</h2>
     </section>
 
     <section class="slide">
-        <h2>Redis. Установка. Режимы.</h2>
-        <p></p>
+        <h2>Redis. Установка.</h2>
+        <ul>
+            <li>sudo apt install redis-server</li>
+            <li class="next">redis-cli ping</li>
+            <li class="next">/etc/redis/redis.conf</li>
+            <li class="next">Переименование опасных команд FLUSHDB, FLUSHALL, KEYS, PEXPIRE, DEL,</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Redis. Режимы.</h2>
+        <ul>
+            <li>redis sentinel</li>
+            <li class="next">redis cluster</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Redis. Синтаксис.</h2>
-        <p></p>
+        <ul>
+            <li>SET</li>
+            <li>GET</li>
+            <li>GETSET</li>
+            <li>DEL</li>
+            <li>TTL . SET foo EX 10</li>
+            <li>LPUSH. RPUSH. LRANGE. MULTI.</li>
+            <li>PUB / SUB</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Redis. Отказоустойчивость.</h2>
-        <p></p>
+        <ul>
+            <li>Стандартные механизмы - master/slave.</li>
+            <li>Механизм бэкапов.</li>
+            <li>Механизм бэкапов в случае кластерного шардинга данных.</li>
+        </ul>
     </section>
 
+    <section class="slide">
+        <h2>Apache Cassandra. Установка.</h2>
+        <ul>
+            <li>sudo apt install openjdk-8-jre</li>
+            <li class="next">export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"</li>
+            <li class="next">Добавляем ключи</li>
+            <li class="next">sudo apt-get install cassandra</li>
+        </ul>
+    </section>
 
+    <section class="slide">
+        <h2>Apache Cassandra. Режимы.</h2>
+        <ul>
+            <li>Все узлы cassandra всегда равнозначны между собой</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/кас3.png" class="cover">
+    </section>
+
+    <section class="slide">
+        <h2>Apache Cassandra. Синтаксис.</h2>
+        <p>Драйвер кассандры располагает диалектом SQL - CQL.</p>
+        <ul>
+            <li>USE для keyspace</li>
+            <li class="next">CREATE для columnfamily</li>
+            <li class="next">JOIN, GROUP BY нет в наличии</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Apache Cassandra. Отказоустойчивость.</h2>
+        <ul>
+            <li>Commit-log всех изменений</li>
+            <li class="next">Чтение с восстановлением (read repair) — во время чтения данные запрашиваются со всех реплик и сравниваются уже после завершения координации.</li>
+            <li class="next">Направленной отправки (hinted handoff) — позволяет сохранить информацию об операции записи на координаторе в том случае, если запись на какой-либо из узлов не удалась.</li>
+            <li class="next">Анти-энтропийное восстановление узла (anti-entropy node repair)</li>
+        </ul>
+    </section>
 
     <footer class="badge">
         <a href="https://github.com/shower/shower">Fork me on GitHub</a>
