@@ -18,6 +18,10 @@
     </header>
 
     <section class="slide">
+        <h2 class="shout">Нереляционные СУБД.</h2>
+    </section>
+
+    <section class="slide">
         <h2>План доклада</h2>
         <ul>
             <li>Введение</li>
@@ -32,9 +36,11 @@
     </section>
     <section class="slide">
         <h2>Введение</h2>
-        <p>NoSql - пример подхода к решению задачи масштабируемости, гибкости модели данных и минимальных временных задержек на обработку данных.</p>
-        <p>Первые применили - Google.</p>
-        <p>Развили и явили народу - Facebook, IBM, Apache.</p>
+        <ul>
+            <li>NoSql - пример подхода к решению задачи масштабируемости, гибкости модели данных и минимальных временных задержек на обработку данных.</li>
+            <li class="next">Первые применили - Google.</li>
+            <li class="next">Развили и явили народу - Facebook, IBM, Apache.</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -63,9 +69,9 @@
         <h2>Виды</h2>
         <ul>
             <li>Колоночные (Column family) - разреженные матрицы в памяти, commit log  на диске. (Hadoop, Cassandra, Big Table)</li>
-            <li>Ключ-значение (Key-value) - большая хеш-таблица. (Redis, DynamoDB)</li>
-            <li>Документно-ориентированное хранилище - структурированный документ json-подобный. (MongoDB)</li>
-            <li>Графовое хранилище - сеть из узлов и рёбер с индексами. (Amazon Neptune)</li>
+            <li class="next">Ключ-значение (Key-value) - большая хеш-таблица. (Redis, DynamoDB)</li>
+            <li class="next">Документно-ориентированное хранилище - структурированный документ json-подобный. (MongoDB)</li>
+            <li class="next">Графовое хранилище - сеть из узлов и рёбер с индексами. (Amazon Neptune)</li>
         </ul>
     </section>
 
@@ -180,7 +186,7 @@
             <li>sudo apt install redis-server</li>
             <li class="next">redis-cli ping</li>
             <li class="next">/etc/redis/redis.conf</li>
-            <li class="next">Переименование опасных команд FLUSHDB, FLUSHALL, KEYS, PEXPIRE, DEL,</li>
+            <li class="next">Переименование опасных команд FLUSHDB, FLUSHALL, KEYS, PEXPIRE, DEL.</li>
         </ul>
     </section>
 
@@ -253,6 +259,10 @@
             <li class="next">Направленной отправки (hinted handoff) — позволяет сохранить информацию об операции записи на координаторе в том случае, если запись на какой-либо из узлов не удалась.</li>
             <li class="next">Анти-энтропийное восстановление узла (anti-entropy node repair)</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Спасибо за внимание</h2>
     </section>
 
     <footer class="badge">
