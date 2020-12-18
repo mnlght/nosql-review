@@ -91,7 +91,7 @@
     </section>
 
     <section class="slide">
-        <h2>Отличия от реляционных субд. Колоночные СУБД.</h2>
+        <h2>Виды. Колоночные СУБД.</h2>
         <ul>
             <li>Одна огромная таблица с данными.</li>
             <li class="next">Внешние ключи, колоночные семейства, колонки.</li>
@@ -100,16 +100,11 @@
     </section>
 
     <section class="slide">
-        <h2>Реляционная БД - View. Колоночные СУБД.</h2>
-        <img src="pictures/table2.png" class="cover">
+        <img src="pictures/column-family.png" class="cover">
     </section>
 
     <section class="slide">
-        <img src="pictures/googlebigtable.png" class="cover">
-    </section>
-
-    <section class="slide">
-        <h2>Отличия от реляционных субд. Ключ-значение.</h2>
+        <h2>Виды. Ключ-значение.</h2>
         <ul>
             <li>Отсутствие схемы данных - вместо неё - хеш-таблица.</li>
             <li class="next">Уникальный ключ + хранимый объект.</li>
@@ -118,12 +113,22 @@
     </section>
 
     <section class="slide">
-        <h2>Отличия от реляционных субд. MongoDB.</h2>
+        <img src="pictures/key-value.png" class="cover">
+    </section>
+
+    <section class="slide">
+        <h2>Виды. MongoDB.</h2>
         <ul>
             <li>Полуструктуринованный документ, похожий на JSON/XML.</li>
-            <li class="next">То же самое, что и ключ-значение, однако, с поиском и мета-информацией.</li>
-            <li class="next">То же самое, что и sql, однако, с отсутствием схемы и возможностью разрежения.</li>
+            <li class="next">База данных — это физический контейнер для коллекций.
+                             Коллекция — группа документов MongoDB. В терминологии SQL это соответствует таблице.
+                             Документ — запись в коллекции MongoDB, набор пар ключ-значение. В терминологии SQL это похоже на строку в таблице базы данных.
+                             Поле — ключ в документе. В терминологии SQL похоже на столбец в таблице.</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/document.png" class="cover">
     </section>
 
     <section class="slide">
@@ -133,6 +138,11 @@
             <li class="next">Каждая единица данных может быть чьим-то отпрыском (но только кого-то одного) и иметь сколько-то собственных отпрысков.</li>
         </ul>
     </section>
+
+    <section class="slide">
+        <img src="pictures/graph.png" class="cover">
+    </section>
+
     <section class="slide">
             <img src="pictures/qwe.png" class="cover">
     </section>
@@ -147,17 +157,31 @@
 
     <section class="slide">
         <h2>Сфера и практика примерения.</h2>
-        <li>Кеширование</li>
-        <li>Q&A данные</li>
-        <li>Хранение документов</li>
-        <li>Быстрый доступ к большим наборам данных</li>
+        <ul>
+            <li>Блоги и системы управления контентом, особенно те, где много контента, в том числе видео и изображений.</li>
+            <li>Аналитика в реальном времени и высокоскоростное журналирование, кэширование данных и кейсов.</li>
+            <li>Хранение данных датчиков и устройств.</li>
+            <li>Работа с большими данными для машинного обучения.</li>
+            <li>Ведение данных на основе местоположения.</li>
+            <li>Стартапы и развертывание новых проектов, где структура данных пока неизвестна.</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Громкие имена.</h2>
-        <li>Spotify - рекомендации (Apache Cassandra)</li>
-        <li>Twitter - real-time сообщения (Redis)</li>
-        <li>Uber - уведомления (MongoDB)</li>
+        <ul>
+            <li>Spotify - рекомендации (Apache Cassandra)</li>
+            <li>Twitter - real-time сообщения (Redis)</li>
+            <li>Uber - уведомления (MongoDB)</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Возможность применения в частых кейсах.</h2>
+        <ul>
+            <li>Чат</li>
+            <li>Сессии</li>
+            <li>Сервисы с частым обращением к БД, которые устраивает BASE</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -179,7 +203,9 @@
     <section class="slide">
         <h2 class="shout">Описание конкретных СУБД.</h2>
     </section>
-
+    <section class="slide">
+        <img src="pictures/redis-icon-logo.png" class="cover">
+    </section>
     <section class="slide">
         <h2>Redis. Установка.</h2>
         <ul>
@@ -193,8 +219,9 @@
     <section class="slide">
         <h2>Redis. Режимы.</h2>
         <ul>
-            <li>redis sentinel</li>
-            <li class="next">redis cluster</li>
+            <li>Один redis-инстанс</li>
+            <li class="next">redis sentinel - мониторинг состояния master/slave</li>
+            <li class="next">redis cluster - сегментация, шардинг</li>
         </ul>
     </section>
 
@@ -219,7 +246,9 @@
             <li>Механизм бэкапов в случае кластерного шардинга данных.</li>
         </ul>
     </section>
-
+    <section class="slide">
+        <img src="pictures/cassandra-logo-fxd-100310326-primary.idge.png" class="cover">
+    </section>
     <section class="slide">
         <h2>Apache Cassandra. Установка.</h2>
         <ul>
